@@ -90,3 +90,57 @@ of each subnet is reserved as its default gateway.
 
 The gateway can be configured on the appropriate
 router interface or Layer 3 switch interface.
+
+
+
+
+
+
+
+## 7. Network Capacity Analysis
+
+### Q4.1 Original Network Capacity
+
+The assigned network is 192.168.10.0/24.
+
+Total IP addresses = 2^8 = 256
+
+Usable IP addresses = 256 - 2 = 254
+
+### Q4.2 Network Sufficiency
+
+The five required subnet blocks are:
+
+- Development: 128 addresses
+- SOC & IT Operations: 64 addresses
+- HR & Finance: 64 addresses
+- Reception & Administration: 32 addresses
+- Server Room: 32 addresses
+
+Total required address space = 320 addresses.
+
+The original /24 network provides only 256 addresses.
+Therefore, it is insufficient.
+
+### Q4.3 Recommended Alternative
+
+I recommend requesting an expanded network
+of 192.168.10.0/23.
+
+This provides:
+
+- Total addresses: 512
+- Usable addresses: 510
+- Address range: 192.168.10.0 to 192.168.11.255
+
+This alternative supports the proposed departmental
+subnets and provides room for future expansion.
+
+### Q4.4 Importance of Future Planning
+
+Future planning helps organizations accommodate
+additional employees, computers, servers and network
+devices without frequently redesigning their networks.
+
+It also improves scalability, network management
+and resource allocation.
