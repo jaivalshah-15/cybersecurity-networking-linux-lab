@@ -51,3 +51,42 @@ Where h represents the number of host bits.
 These are minimum subnet sizes based on the
 calculated departmental requirements, before
 accounting for additional infrastructure addresses.
+
+
+
+
+
+
+## 4. VLSM IP Address Allocation
+
+The original /24 network is insufficient.
+Therefore, the proposed alternative is 192.168.10.0/23.
+
+The subnets are allocated from largest to smallest.
+
+| Department | Network Address/CIDR | Subnet Mask | First Usable IP | Last Usable IP | Broadcast Address | Usable Hosts |
+|---|---|---|---|---|---|---:|
+| Development | 192.168.10.0/25 | 255.255.255.128 | 192.168.10.1 | 192.168.10.126 | 192.168.10.127 | 126 |
+| SOC & IT Operations | 192.168.10.128/26 | 255.255.255.192 | 192.168.10.129 | 192.168.10.190 | 192.168.10.191 | 62 |
+| HR & Finance | 192.168.10.192/26 | 255.255.255.192 | 192.168.10.193 | 192.168.10.254 | 192.168.10.255 | 62 |
+| Reception & Administration | 192.168.11.0/27 | 255.255.255.224 | 192.168.11.1 | 192.168.11.30 | 192.168.11.31 | 30 |
+| Server Room | 192.168.11.32/27 | 255.255.255.224 | 192.168.11.33 | 192.168.11.62 | 192.168.11.63 | 30 |
+
+## 5. Allocation Verification
+
+- All five subnets are non-overlapping.
+- All five subnets fit within 192.168.10.0/23.
+- The allocation provides 310 usable host addresses.
+- 207 addresses are required for the calculated departmental capacity.
+- Remaining usable capacity: 103 addresses.
+
+The remaining capacity can accommodate network infrastructure
+and future expansion, subject to detailed planning.
+
+## 6. Gateway Allocation
+
+For this proposed design, the first usable IP address
+of each subnet is reserved as its default gateway.
+
+The gateway can be configured on the appropriate
+router interface or Layer 3 switch interface.
